@@ -1,13 +1,9 @@
 import React from 'react'
 import Button from './Button'
 
-const Form = ({ reqType, setReqType }) => {
+const Form = () => {
   return (
     <div>
-        <Button 
-            reqType={reqType} 
-            setReqType={setReqType} 
-            buttonText="posts"/>
     </div>
   )
 }

@@ -1,17 +1,33 @@
-import Form from "./Form";
-import { useState } from "react";
+import List from "./List";
+import { useEffect, useState } from "react";
 
 function App() {
 
-  const [ reqType, setReqType ] = useState('users')
+  const API_URL = 'https://jsonplaceholder.typicode.com/users'
+
+
+  const [ listItems, setListItems ] = useState([])
+
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await fetch(API_URL)
+        if (!response.ok) throw new Error('wuuups!! data fetch failed...')
+        const data = await response.json()
+        setListItems(data)
+      } catch(err) {console.warn(err.message)}
+    }
+    fetchItems()
+  }, [])
+
+ 
+  
   return (
-    <div className="App"> 
-      <Form 
-        reqType={reqType} 
-        setReqType={setReqType}
-        />
-    </div>
-  );
+  <div className="App">
+    <List listItems={listItems} />
+  </div>
+  )
 }
 
 export default App;

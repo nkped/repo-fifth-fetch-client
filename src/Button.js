@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Button = ({ reqType, setReqType, buttonText }) => {
+const Button = () => {
   return (
     <div>
-        <button>{buttonText}</button>
+        <button></button>
     </div>
   )
 }
