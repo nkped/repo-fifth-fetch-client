@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-form {
+.form {
   width: 100%;
   position: fixed;
 }
